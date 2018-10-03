@@ -2,6 +2,7 @@
 var Storelocations =[];
 var hours = ['','6am','7am','8am','9am','10am','11am','12am','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
 var storeTable = document.getElementById('store');
+var Storeform = document.getElementById('location')
 var thead =document.getElementsByTagName('thead')[0];
 var tfoot =document.getElementsByTagName('tfoot')[0];
 var tbody =document.getElementsByTagName('tbody')[0];
@@ -112,17 +113,15 @@ function Store(location,minCustomer,maxCustomer,avgCookieSales) {
 
          var newStore =new(location,min,max,avg);
 
-         newStore.render();
+         storeTable.innerHTML ='';
+         Headerow();
+         renderStores();
+         
      }
-        addform.addEventlistener('submit',handleSubmit);
+        Storeform.addEventlistener('submit',AddNewStore);
         
-            new store('firstNpike',22,65,6.3);
-            new Store('Seatac', 3, 24, 1.2);
-            new Store('Seattle Center', 11, 38, 3.7);
-            new Store('Capitol Hill', 20, 38, 2.3);
-            new Store('Alki', 2, 16, 4.6);
-
-            renderHeader();
-            renderStores();
-            renderFooter();
+    
+        Headerow();
+        renderStores();
+        
 console.log(Storelocations);
