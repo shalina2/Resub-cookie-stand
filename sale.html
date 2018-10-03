@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Class 08</title>
+    <link rel="stylesheet" type="text/css" href="./styles/style.css" />
+  </head>
+  <body>
+    <h1>salmon cookie </h1>
+    <table id="store"></table>
 
-<head>
-	<title><Cookie-Stand></Cookie-Stand></title>
-  <link href="css/style.css" />
-</head>
+    <form id="storeForm">
+        <fieldset>
+            <legend> Add a store</legend>
 
-<body>
+            <label for="location">location: </label>
+            <input type="text" name="location">
 
-  <header> Pat cookie page</header>
-  
-	<main>
-    
-        <section>
-            <table id ="salestable">
-            <thead></thead>
-            <tbody></tbody>
-            <tfoot></tfoot>
-        </table>
-        </section>
-	</main>
-  
-  <footer>  
-  </footer>
+            <label for="mincustomer">mincustomer: </label>
+            <input type="text" name="mincustomer">
 
-  <script src ="app.js"></script>
-  
-</body>
+            <label for="maxcustomer">maxcustomer </label>
+            <input type="text" name="maxcustomer">
 
+            <button>Add new store</button>
+
+        </fieldset>
+
+    </form>
+    <script src="app.js"></script>
+  </body>
 </html>
