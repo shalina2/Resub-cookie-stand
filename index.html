@@ -7,21 +7,33 @@
 </head>
 
 <body>
-  <header>
+        <nav id="nav">
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="sales.html">sales</a></li>
+                  <a href="index.html"><img src="Salmon.png"/></a>
+  
+  </ul>  
+  </nav>              
+  <h1>
     Salmon shop
-  </header>
-  <script>
-    // Find Our <ul>
-    var stuffList = document.getElementById("stuff");
-    // Create a new List Item in the DOM
-    var newLi = document.createElement('li');
-    // Give it some text
-    newLi.textContent = "New List Item!";
-    // Add it to the end of the UL
-    stuffList.appendChild(newLi);
-    // Change the UL to have the "bald" class on it (turns it red)
-    newStuff.classList.add('bald');
-  </script>
+  </h1>
+  <div class ="row">
+      <div class ="column">
+          <ul>
+              <li id="title">Hours & Location</li>
+              <li>FirstNpike</li>
+              <li>SeaTac Airport</li>
+              <li>Capital Hill</li>
+          <li>Seattle Center</li>
+          <li>Alki</li>
+          <li></li>
+
+          </ul>
+      </div>
+  </div>
+  <script src="app.js"></script>
 
 </body>
 
