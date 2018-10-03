@@ -6,6 +6,7 @@ var Storeform = document.getElementById('location')
 var thead =document.getElementsByTagName('thead')[0];
 var tfoot =document.getElementsByTagName('tfoot')[0];
 var tbody =document.getElementsByTagName('tbody')[0];
+var trEl =document.getElementById('tr');
 
 function Store(location,minCustomer,maxCustomer,avgCookieSales) {
     this.locationName = location;
@@ -19,8 +20,8 @@ function Store(location,minCustomer,maxCustomer,avgCookieSales) {
 }
 
 
-    function random(){
-       var randomNumber = Math.floor(Math.random() * (maxCustomer- minCustomer +1 )) + minCustomer;
+    function randomCust(){
+       return Math.floor(Math.random() * (maxCustomer- minCustomer +1 )) + minCustomer;
         return randomNumber;
     }
     Store.prototype.getsales=function(){
@@ -39,12 +40,12 @@ function Store(location,minCustomer,maxCustomer,avgCookieSales) {
 
         tdelement.textContent =this.location;
         trelement.appendChild(tdelement);
-
-        var tdelement =document.createElement('td');
-        tdelement.textContent =this.minCustomer;
+        for(var i=0;i< businessHours.length;i++) {
+        tdelement =document.createElement('td');
+        tdelement.textContent =this.avgCookieSales[i];
         trelement.appendChild(tdelement);
-
-        var tdelement =document.createElement('td');
+        }
+         tdelement =document.createElement('td');
         tdelement.textContent =this.maxCustomer;
         trelement.appendChild(tdelement);
 
@@ -57,26 +58,31 @@ function Store(location,minCustomer,maxCustomer,avgCookieSales) {
 
     };
 
-            new Store('firstNpike',22,65,6.3);
-            new Store('Seatac', 3, 24, 1.2);
-            new Store('Seattle Center', 11, 38, 3.7);
-            new Store('Capitol Hill', 20, 38, 2.3);
-            new Store('Alki', 2, 16, 4.6);
+            
 
 
             function Headerow(){
                var headerTrElement = document.createElement('tr');
                 var thElement = document.createElement('th');
-                thElement.textContent =hours;
+                tdelement.textContent ='salmon cookie';
                 headerTrElement.appendChild(thElement);
                 }
+                storeTable.appendChild(trEl);
+
+                var firstNpike =new store('FirstNpike',22,65,6.3);
+                var Seatac =new store('Seatac',3, 24, 1.2);
+                var SeattleCenter =new store('SeattleCenter',11, 38, 3.7);
+                var CapitolHill =new store('CapitolHill',20, 38, 2.3);
+                var Alki = new store ('Alki',2, 16, 4.6);
+
 
 
 
 
     function renderStores() {
         for(var i of allstores) {
-            i.render();
+            stores.render();
+            stores.getsales();
 
         }
     }
